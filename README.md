@@ -1,1 +1,2327 @@
-# Smart-RTO-
+<!DOCTYPE html>
+<html lang="mr">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>RTO Smart Services</title>
+
+<meta name="description"
+content="RTO Smart Services - Driving Licence, Vehicle Registration, RC Transfer, Renewal आणि RTO मार्गदर्शन.">
+
+<style>
+
+:root{
+
+--blue:#0757d9;
+--blue2:#00aeea;
+--cyan:#18c8e8;
+--orange:#ff9f2f;
+--green:#20bd68;
+
+--dark:#17253b;
+--text:#26364d;
+--muted:#6d7d92;
+
+--bg:#f4f8fd;
+--white:#ffffff;
+
+--border:#e2eaf3;
+
+--shadow:
+0 15px 45px rgba(25,70,120,.10);
+
+}
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+font-family:
+Arial,
+Helvetica,
+sans-serif;
+
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+
+background:var(--bg);
+color:var(--text);
+
+line-height:1.6;
+
+}
+
+img{
+
+width:100%;
+display:block;
+
+}
+
+.container{
+
+width:92%;
+max-width:1250px;
+
+margin:auto;
+
+}
+
+
+/* =========================
+TOP BAR
+========================= */
+
+.topbar{
+
+background:
+linear-gradient(
+90deg,
+#0757d9,
+#00aeea
+);
+
+color:white;
+
+padding:8px 4%;
+
+font-size:12px;
+
+}
+
+.topbar-inner{
+
+max-width:1250px;
+margin:auto;
+
+display:flex;
+
+justify-content:space-between;
+
+}
+
+
+/* =========================
+NAVBAR
+========================= */
+
+header{
+
+position:sticky;
+top:0;
+
+z-index:999;
+
+background:
+rgba(255,255,255,.96);
+
+backdrop-filter:
+blur(15px);
+
+border-bottom:
+1px solid var(--border);
+
+box-shadow:
+0 5px 25px
+rgba(30,70,120,.06);
+
+}
+
+.nav{
+
+height:78px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:10px;
+
+}
+
+.logo-icon{
+
+width:46px;
+height:46px;
+
+display:flex;
+
+align-items:center;
+justify-content:center;
+
+border-radius:13px;
+
+font-size:24px;
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+var(--blue),
+var(--cyan)
+);
+
+box-shadow:
+0 10px 25px
+rgba(7,87,217,.25);
+
+}
+
+.logo-title{
+
+font-size:21px;
+
+font-weight:900;
+
+}
+
+.logo-title span{
+
+color:var(--blue);
+
+}
+
+.logo-sub{
+
+font-size:8px;
+
+letter-spacing:3px;
+
+color:#8290a3;
+
+}
+
+.nav-links{
+
+display:flex;
+
+gap:25px;
+
+align-items:center;
+
+}
+
+.nav-links a{
+
+color:#44536a;
+
+font-size:14px;
+
+font-weight:700;
+
+text-decoration:none;
+
+}
+
+.nav-links a:hover{
+
+color:var(--blue);
+
+}
+
+.nav-btn{
+
+color:white!important;
+
+padding:11px 18px;
+
+border-radius:9px;
+
+background:
+linear-gradient(
+135deg,
+var(--blue),
+var(--blue2)
+);
+
+}
+
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+
+background:
+
+radial-gradient(
+circle at 80% 20%,
+rgba(0,174,234,.18),
+transparent 28%
+),
+
+radial-gradient(
+circle at 10% 80%,
+rgba(7,87,217,.10),
+transparent 30%
+),
+
+linear-gradient(
+180deg,
+#ffffff,
+#f2f8ff
+);
+
+overflow:hidden;
+
+}
+
+.hero-inner{
+
+min-height:650px;
+
+display:grid;
+
+grid-template-columns:
+1.05fr .95fr;
+
+align-items:center;
+
+gap:60px;
+
+}
+
+.hero-badge{
+
+display:inline-block;
+
+padding:8px 15px;
+
+border-radius:50px;
+
+background:#eaf4ff;
+
+border:1px solid #d5e8ff;
+
+color:var(--blue);
+
+font-size:12px;
+
+font-weight:900;
+
+}
+
+.hero h1{
+
+font-size:58px;
+
+line-height:1.06;
+
+letter-spacing:-2px;
+
+margin-top:20px;
+
+}
+
+.hero h1 span{
+
+background:
+linear-gradient(
+90deg,
+var(--blue),
+var(--cyan)
+);
+
+-webkit-background-clip:text;
+
+color:transparent;
+
+}
+
+.hero-description{
+
+max-width:650px;
+
+font-size:18px;
+
+color:var(--muted);
+
+margin-top:20px;
+
+}
+
+.hero-buttons{
+
+display:flex;
+
+gap:13px;
+
+flex-wrap:wrap;
+
+margin-top:30px;
+
+}
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:14px 22px;
+
+border-radius:10px;
+
+font-weight:800;
+
+text-decoration:none;
+
+transition:.25s;
+
+border:0;
+
+cursor:pointer;
+
+}
+
+.btn:hover{
+
+transform:
+translateY(-3px);
+
+}
+
+.btn-primary{
+
+color:white;
+
+background:
+linear-gradient(
+135deg,
+var(--blue),
+var(--cyan)
+);
+
+box-shadow:
+0 12px 28px
+rgba(7,87,217,.22);
+
+}
+
+.btn-white{
+
+background:white;
+
+color:var(--blue);
+
+border:1px solid #dce6f1;
+
+}
+
+
+/* =========================
+REAL IMAGE HERO
+========================= */
+
+.hero-photo{
+
+position:relative;
+
+}
+
+.hero-photo img{
+
+height:440px;
+
+object-fit:cover;
+
+border-radius:26px;
+
+box-shadow:
+0 30px 70px
+rgba(25,70,120,.18);
+
+border:
+7px solid white;
+
+}
+
+.photo-label{
+
+position:absolute;
+
+bottom:25px;
+
+left:25px;
+
+right:25px;
+
+background:
+rgba(255,255,255,.93);
+
+backdrop-filter:
+blur(12px);
+
+padding:18px;
+
+border-radius:15px;
+
+box-shadow:
+0 10px 30px
+rgba(20,60,100,.12);
+
+}
+
+.photo-label strong{
+
+display:block;
+
+font-size:18px;
+
+}
+
+.photo-label span{
+
+font-size:12px;
+
+color:var(--muted);
+
+}
+
+
+/* =========================
+SECTION
+========================= */
+
+.section{
+
+padding:90px 0;
+
+}
+
+.section-title{
+
+text-align:center;
+
+max-width:720px;
+
+margin:
+0 auto 45px;
+
+}
+
+.section-label{
+
+color:var(--blue);
+
+font-size:11px;
+
+letter-spacing:2px;
+
+font-weight:900;
+
+}
+
+.section-title h2{
+
+font-size:38px;
+
+margin-top:8px;
+
+}
+
+.section-title p{
+
+color:var(--muted);
+
+margin-top:8px;
+
+}
+
+
+/* =========================
+SERVICE CARDS
+========================= */
+
+.services{
+
+display:grid;
+
+grid-template-columns:
+repeat(3,1fr);
+
+gap:20px;
+
+}
+
+.service{
+
+background:white;
+
+border:
+1px solid var(--border);
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+transition:.3s;
+
+}
+
+.service:hover{
+
+transform:
+translateY(-7px);
+
+box-shadow:
+0 22px 55px
+rgba(25,70,120,.15);
+
+}
+
+.service-img{
+
+height:190px;
+
+overflow:hidden;
+
+}
+
+.service-img img{
+
+height:100%;
+
+object-fit:cover;
+
+transition:.4s;
+
+}
+
+.service:hover
+.service-img img{
+
+transform:scale(1.05);
+
+}
+
+.service-content{
+
+padding:23px;
+
+}
+
+.service-icon{
+
+font-size:25px;
+
+margin-bottom:8px;
+
+}
+
+.service h3{
+
+font-size:19px;
+
+}
+
+.service p{
+
+font-size:14px;
+
+color:var(--muted);
+
+margin-top:7px;
+
+}
+
+.service a{
+
+display:inline-block;
+
+margin-top:15px;
+
+color:var(--blue);
+
+font-size:13px;
+
+font-weight:900;
+
+text-decoration:none;
+
+}
+
+
+/* =========================
+COLOUR STRIP
+========================= */
+
+.color-strip{
+
+height:5px;
+
+background:
+linear-gradient(
+90deg,
+var(--blue),
+var(--cyan),
+var(--orange)
+);
+
+}
+
+
+/* =========================
+LICENCE
+========================= */
+
+.licence-section{
+
+background:
+linear-gradient(
+135deg,
+#edf6ff,
+#f8fdff
+);
+
+}
+
+.licences{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:18px;
+
+}
+
+.licence{
+
+background:white;
+
+border:
+1px solid var(--border);
+
+border-radius:18px;
+
+padding:25px;
+
+box-shadow:var(--shadow);
+
+}
+
+.licence-img{
+
+height:150px;
+
+border-radius:13px;
+
+overflow:hidden;
+
+margin-bottom:17px;
+
+}
+
+.licence-img img{
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.licence h3{
+
+font-size:18px;
+
+}
+
+.licence p{
+
+font-size:13px;
+
+color:var(--muted);
+
+margin-top:6px;
+
+}
+
+
+/* =========================
+DOCUMENTS
+========================= */
+
+.documents{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:22px;
+
+}
+
+.document{
+
+background:white;
+
+border:
+1px solid var(--border);
+
+border-radius:20px;
+
+overflow:hidden;
+
+box-shadow:var(--shadow);
+
+}
+
+.document-img{
+
+height:230px;
+
+}
+
+.document-img img{
+
+height:100%;
+
+object-fit:cover;
+
+}
+
+.document-content{
+
+padding:27px;
+
+}
+
+.document-list{
+
+list-style:none;
+
+margin-top:15px;
+
+}
+
+.document-list li{
+
+padding:9px 0;
+
+border-bottom:
+1px solid #edf1f5;
+
+font-size:14px;
+
+}
+
+.document-list li::before{
+
+content:"✓";
+
+color:var(--green);
+
+font-weight:900;
+
+margin-right:9px;
+
+}
+
+
+/* =========================
+PROCESS
+========================= */
+
+.process{
+
+display:grid;
+
+grid-template-columns:
+repeat(4,1fr);
+
+gap:20px;
+
+}
+
+.step{
+
+text-align:center;
+
+padding:25px;
+
+background:white;
+
+border:
+1px solid var(--border);
+
+border-radius:18px;
+
+box-shadow:var(--shadow);
+
+}
+
+.step-number{
+
+width:60px;
+height:60px;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+color:white;
+
+font-weight:900;
+
+font-size:20px;
+
+background:
+linear-gradient(
+135deg,
+var(--blue),
+var(--cyan)
+);
+
+}
+
+.step h3{
+
+margin-top:14px;
+
+}
+
+.step p{
+
+font-size:13px;
+
+color:var(--muted);
+
+margin-top:5px;
+
+}
+
+
+/* =========================
+FORM
+========================= */
+
+.form-section{
+
+background:
+linear-gradient(
+135deg,
+#edf5ff,
+#f9fdff
+);
+
+}
+
+.form-wrapper{
+
+max-width:900px;
+
+margin:auto;
+
+padding:38px;
+
+background:white;
+
+border-radius:22px;
+
+border:
+1px solid var(--border);
+
+box-shadow:
+0 25px 65px
+rgba(25,70,120,.12);
+
+}
+
+.form-grid{
+
+display:grid;
+
+grid-template-columns:
+1fr 1fr;
+
+gap:18px;
+
+}
+
+.form-group.full{
+
+grid-column:
+1/-1;
+
+}
+
+.form-group label{
+
+display:block;
+
+font-size:13px;
+
+font-weight:900;
+
+margin-bottom:7px;
+
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+
+width:100%;
+
+padding:14px;
+
+border:
+1px solid #dce5ef;
+
+border-radius:10px;
+
+background:#fcfdff;
+
+outline:none;
+
+font-size:14px;
+
+}
+
+.form-group textarea{
+
+min-height:110px;
+
+resize:vertical;
+
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+
+border-color:var(--blue);
+
+box-shadow:
+0 0 0 4px
+rgba(7,87,217,.07);
+
+}
+
+.whatsapp-btn{
+
+width:100%;
+
+margin-top:18px;
+
+background:
+linear-gradient(
+135deg,
+#16b968,
+#25d366
+);
+
+color:white;
+
+}
+
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+
+background:white;
+
+border-top:
+1px solid var(--border);
+
+padding:50px 0 20px;
+
+}
+
+.footer-grid{
+
+display:grid;
+
+grid-template-columns:
+2fr 1fr 1fr 1fr;
+
+gap:30px;
+
+}
+
+.footer-title{
+
+font-weight:900;
+
+}
+
+.footer-col p,
+.footer-col a{
+
+display:block;
+
+color:#728095;
+
+font-size:13px;
+
+margin-top:8px;
+
+text-decoration:none;
+
+}
+
+.copyright{
+
+border-top:
+1px solid #e7edf4;
+
+margin-top:35px;
+
+padding-top:18px;
+
+text-align:center;
+
+font-size:11px;
+
+color:#8793a3;
+
+}
+
+
+/* =========================
+WHATSAPP
+========================= */
+
+.whatsapp{
+
+position:fixed;
+
+right:20px;
+
+bottom:20px;
+
+width:60px;
+height:60px;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:50%;
+
+background:#20c978;
+
+color:white;
+
+font-size:27px;
+
+box-shadow:
+0 12px 30px
+rgba(0,0,0,.2);
+
+z-index:2000;
+
+}
+
+
+/* =========================
+MOBILE
+========================= */
+
+@media(max-width:950px){
+
+.hero-inner{
+
+grid-template-columns:1fr;
+
+padding:70px 0;
+
+}
+
+.services{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+.licences{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+.process{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+.footer-grid{
+
+grid-template-columns:
+1fr 1fr;
+
+}
+
+}
+
+@media(max-width:650px){
+
+.nav-links{
+
+display:none;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero-description{
+
+font-size:15px;
+
+}
+
+.hero-photo img{
+
+height:330px;
+
+}
+
+.services,
+.licences,
+.documents,
+.process,
+.form-grid,
+.footer-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.form-group.full{
+
+grid-column:auto;
+
+}
+
+.form-wrapper{
+
+padding:22px;
+
+}
+
+.section{
+
+padding:65px 0;
+
+}
+
+.section-title h2{
+
+font-size:30px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="topbar">
+
+<div class="topbar-inner">
+
+<span>
+🚘 Professional RTO Service Portal
+</span>
+
+<span>
+📱 WhatsApp Enquiry Available
+</span>
+
+</div>
+
+</div>
+
+
+<!-- NAVBAR -->
+
+<header>
+
+<div class="container nav">
+
+
+<div class="logo">
+
+<div class="logo-icon">
+🚘
+</div>
+
+<div>
+
+<div class="logo-title">
+RTO <span>SMART</span>
+</div>
+
+<div class="logo-sub">
+SERVICES & GUIDANCE
+</div>
+
+</div>
+
+</div>
+
+
+<nav class="nav-links">
+
+<a href="#services">
+Services
+</a>
+
+<a href="#licence">
+Licence
+</a>
+
+<a href="#documents">
+Documents
+</a>
+
+<a href="#process">
+Process
+</a>
+
+<a
+href="#form"
+class="nav-btn">
+
+Apply Now
+
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container hero-inner">
+
+
+<div>
+
+<div class="hero-badge">
+
+✦ SMART RTO SERVICE PLATFORM
+
+</div>
+
+
+<h1>
+
+तुमच्या RTO कामांसाठी
+
+<span>
+एक स्मार्ट प्लॅटफॉर्म.
+</span>
+
+</h1>
+
+
+<p class="hero-description">
+
+Driving Licence, Vehicle Registration,
+RC Transfer, Renewal आणि RTO
+सेवांची माहिती — आता एका
+professional platform वर.
+
+</p>
+
+
+<div class="hero-buttons">
+
+<a
+href="#services"
+class="btn btn-primary">
+
+🚗 Explore Services
+
+</a>
+
+
+<a
+href="#form"
+class="btn btn-white">
+
+💬 WhatsApp Enquiry
+
+</a>
+
+</div>
+
+</div>
+
+
+<!-- REAL PHOTO -->
+
+<div class="hero-photo">
+
+<img
+src="images/rto-office.jpg"
+alt="RTO Office">
+
+<div class="photo-label">
+
+<strong>
+RTO Services & Guidance
+</strong>
+
+<span>
+Professional information and service enquiry
+</span>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<div class="color-strip"></div>
+
+
+<!-- SERVICES -->
+
+<section
+class="section"
+id="services">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<div class="section-label">
+OUR SERVICES
+</div>
+
+<h2>
+RTO मधील प्रमुख सेवा
+</h2>
+
+<p>
+तुमच्या वाहन आणि Driving Licence शी संबंधित
+महत्त्वाच्या सेवांची माहिती.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<!-- SERVICE 1 -->
+
+<div class="service">
+
+<div class="service-img">
+
+<img
+src="images/driving-license.jpg"
+alt="Driving Licence">
+
+</div>
+
+<div class="service-content">
+
+<div class="service-icon">
+🪪
+</div>
+
+<h3>
+Learning Licence
+</h3>
+
+<p>
+Learner Licence साठी पात्रता,
+Documents आणि प्रक्रियेबद्दल मार्गदर्शन.
+</p>
+
+<a href="#form">
+Enquire Now →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- SERVICE 2 -->
+
+<div class="service">
+
+<div class="service-img">
+
+<img
+src="images/car-registration.jpg"
+alt="Vehicle Registration">
+
+</div>
+
+<div class="service-content">
+
+<div class="service-icon">
+🚗
+</div>
+
+<h3>
+Vehicle Registration
+</h3>
+
+<p>
+नवीन वाहन Registration आणि
+आवश्यक Documents ची माहिती.
+</p>
+
+<a href="#form">
+Enquire Now →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- SERVICE 3 -->
+
+<div class="service">
+
+<div class="service-img">
+
+<img
+src="images/rc-transfer.jpg"
+alt="RC Transfer">
+
+</div>
+
+<div class="service-content">
+
+<div class="service-icon">
+🔄
+</div>
+
+<h3>
+RC Transfer
+</h3>
+
+<p>
+वाहन मालकी Transfer करण्यासाठी
+आवश्यक मार्गदर्शन.
+</p>
+
+<a href="#form">
+Enquire Now →
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LICENCE -->
+
+<section
+class="section licence-section"
+id="licence">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<div class="section-label">
+LICENCE TYPES
+</div>
+
+<h2>
+Driving Licence प्रकार
+</h2>
+
+</div>
+
+
+<div class="licences">
+
+
+<div class="licence">
+
+<div class="licence-img">
+
+<img
+src="images/driving-license.jpg"
+alt="Two Wheeler Licence">
+
+</div>
+
+<h3>
+🛵 Two Wheeler
+</h3>
+
+<p>
+दुचाकी वाहनांसाठी संबंधित licence category.
+</p>
+
+</div>
+
+
+<div class="licence">
+
+<div class="licence-img">
+
+<img
+src="images/car-registration.jpg"
+alt="LMV">
+
+</div>
+
+<h3>
+🚗 LMV
+</h3>
+
+<p>
+Light Motor Vehicle संबंधित माहिती.
+</p>
+
+</div>
+
+
+<div class="licence">
+
+<div class="licence-img">
+
+<img
+src="images/vehicle-inspection.jpg"
+alt="Transport Vehicle">
+
+</div>
+
+<h3>
+🚚 Transport Vehicle
+</h3>
+
+<p>
+Transport vehicle licence संदर्भातील माहिती.
+</p>
+
+</div>
+
+
+<div class="licence">
+
+<div class="licence-img">
+
+<img
+src="images/vehicle-inspection.jpg"
+alt="Heavy Vehicle">
+
+</div>
+
+<h3>
+🚌 Heavy Vehicle
+</h3>
+
+<p>
+Heavy Motor Vehicle संदर्भातील माहिती.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- DOCUMENTS -->
+
+<section
+class="section"
+id="documents">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<div class="section-label">
+DOCUMENTS
+</div>
+
+<h2>
+आवश्यक Documents
+</h2>
+
+<p>
+सेवेनुसार documents बदलू शकतात.
+</p>
+
+</div>
+
+
+<div class="documents">
+
+
+<div class="document">
+
+<div class="document-img">
+
+<img
+src="images/documents.jpg"
+alt="RTO Documents">
+
+</div>
+
+<div class="document-content">
+
+<h3>
+👤 Personal Documents
+</h3>
+
+<ul class="document-list">
+
+<li>Identity Proof</li>
+<li>Address Proof</li>
+<li>Age Proof</li>
+<li>Photograph</li>
+<li>Medical Certificate — applicable cases</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="document">
+
+<div class="document-img">
+
+<img
+src="images/vehicle-inspection.jpg"
+alt="Vehicle Documents">
+
+</div>
+
+<div class="document-content">
+
+<h3>
+🚘 Vehicle Documents
+</h3>
+
+<ul class="document-list">
+
+<li>Registration Certificate</li>
+<li>Motor Insurance</li>
+<li>PUC Certificate</li>
+<li>Sale / Purchase Documents</li>
+<li>Other applicable RTO documents</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section
+class="section"
+id="process"
+style="background:white;">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<div class="section-label">
+HOW IT WORKS
+</div>
+
+<h2>
+सेवा घेण्याची प्रक्रिया
+</h2>
+
+</div>
+
+
+<div class="process">
+
+
+<div class="step">
+
+<div class="step-number">
+01
+</div>
+
+<h3>
+Service निवडा
+</h3>
+
+<p>
+तुम्हाला आवश्यक सेवा निवडा.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+02
+</div>
+
+<h3>
+Details भरा
+</h3>
+
+<p>
+Basic customer information भरा.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+03
+</div>
+
+<h3>
+WhatsApp Enquiry
+</h3>
+
+<p>
+तयार message WhatsApp वर पाठवा.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="step-number">
+04
+</div>
+
+<h3>
+Guidance
+</h3>
+
+<p>
+पुढील प्रक्रियेसाठी मार्गदर्शन.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FORM -->
+
+<section
+class="section form-section"
+id="form">
+
+<div class="container">
+
+
+<div class="section-title">
+
+<div class="section-label">
+SERVICE ENQUIRY
+</div>
+
+<h2>
+RTO Service साठी Enquiry
+</h2>
+
+<p>
+माहिती भरा आणि WhatsApp द्वारे enquiry पाठवा.
+</p>
+
+</div>
+
+
+<div class="form-wrapper">
+
+<form id="rtoForm">
+
+
+<div class="form-grid">
+
+
+<div class="form-group">
+
+<label>
+पूर्ण नाव *
+</label>
+
+<input
+id="name"
+type="text"
+placeholder="तुमचे पूर्ण नाव"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Mobile Number *
+</label>
+
+<input
+id="mobile"
+type="tel"
+pattern="[0-9]{10}"
+placeholder="10 अंकी मोबाईल नंबर"
+required>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+RTO Service *
+</label>
+
+<select
+id="service"
+required>
+
+<option value="">
+Service निवडा
+</option>
+
+<option>
+Learning Licence
+</option>
+
+<option>
+Permanent Driving Licence
+</option>
+
+<option>
+New Vehicle Registration
+</option>
+
+<option>
+RC Transfer
+</option>
+
+<option>
+RC Renewal
+</option>
+
+<option>
+Duplicate RC
+</option>
+
+<option>
+Other RTO Service
+</option>
+
+</select>
+
+</div>
+
+
+<div class="form-group">
+
+<label>
+Vehicle Number
+</label>
+
+<input
+id="vehicle"
+type="text"
+placeholder="उदा. MH38AB1234">
+
+</div>
+
+
+<div class="form-group full">
+
+<label>
+Requirement
+</label>
+
+<textarea
+id="message"
+placeholder="तुम्हाला कोणते RTO काम करायचे आहे?">
+</textarea>
+
+</div>
+
+
+</div>
+
+
+<button
+class="btn whatsapp-btn"
+type="submit">
+
+💬 WhatsApp वर Enquiry पाठवा
+
+</button>
+
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+
+<div class="footer-grid">
+
+
+<div class="footer-col">
+
+<div class="logo">
+
+<div class="logo-icon">
+🚘
+</div>
+
+<div>
+
+<div class="logo-title">
+RTO <span>SMART</span>
+</div>
+
+<div class="logo-sub">
+SERVICES & GUIDANCE
+</div>
+
+</div>
+
+</div>
+
+<p>
+RTO services आणि vehicle-related
+माहिती व मार्गदर्शन platform.
+</p>
+
+</div>
+
+
+<div class="footer-col">
+
+<div class="footer-title">
+Services
+</div>
+
+<a href="#services">
+Driving Licence
+</a>
+
+<a href="#services">
+Vehicle Registration
+</a>
+
+<a href="#services">
+RC Transfer
+</a>
+
+</div>
+
+
+<div class="footer-col">
+
+<div class="footer-title">
+Information
+</div>
+
+<a href="#licence">
+Licence Types
+</a>
+
+<a href="#documents">
+Documents
+</a>
+
+<a href="#process">
+Process
+</a>
+
+</div>
+
+
+<div class="footer-col">
+
+<div class="footer-title">
+Contact
+</div>
+
+<p>
+📱 WhatsApp Support
+</p>
+
+<p>
+📍 Maharashtra
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="copyright">
+
+© 2026 RTO Smart Services.
+All Rights Reserved.
+
+<br><br>
+
+ही स्वतंत्र माहिती/सेवा enquiry website आहे.
+ही सरकारी RTO वेबसाइट नाही.
+अंतिम नियम, शुल्क आणि documents संबंधित
+अधिकृत स्रोतावर तपासा.
+
+</div>
+
+</div>
+
+</footer>
+
+
+<!-- WHATSAPP -->
+
+<a
+href="#form"
+class="whatsapp">
+
+💬
+
+</a><script>
+
+/* =====================================================
+   OWNER WHATSAPP NUMBER
+===================================================== */
+
+const OWNER_WHATSAPP =
+"919876543210";
+
+
+/* =====================================================
+   SERVICE SEARCH
+===================================================== */
+
+/*
+जर Search box वापरायचा असेल तर
+नंतर येथे search functionality जोडता येईल.
+*/
+
+
+/* =====================================================
+   WHATSAPP ENQUIRY
+===================================================== */
+
+document
+.getElementById("rtoForm")
+.addEventListener(
+"submit",
+function(event){
+
+event.preventDefault();
+
+
+const name =
+document
+.getElementById("name")
+.value
+.trim();
+
+
+const mobile =
+document
+.getElementById("mobile")
+.value
+.trim();
+
+
+const service =
+document
+.getElementById("service")
+.value;
+
+
+const vehicle =
+document
+.getElementById("vehicle")
+.value
+.trim();
+
+
+const message =
+document
+.getElementById("message")
+.value
+.trim();
+
+
+/*
+WhatsApp Message
+*/
+
+const whatsappMessage =
+
+`🚘 RTO SMART SERVICES
+━━━━━━━━━━━━━━━━━━━━
+
+👤 Customer Name:
+${name}
+
+📱 Moe}
+
+🛠️ Required Service:
+${service}
+
+🚗 Vehicle Number:
+${vehicle || "Not Provided"}
+
+📝 Requirement:
+${message || "Not Provided"}
+
+━━━━━━━━━━━━━━━━━━━━
+
+NEW CUSTOMER ENQUIRY
+
+RTO Smart Services`;
+
+
+/*
+Encode Message
+*/
+
+const encodedMessage =
+encodeURIComponent(
+whatsappMessage
+);
+
+
+/*
+WhatsApp URL
+*/
+
+const whatsappURL =
+"https://wa.me/" +
+OWNER_WHATSAPP +
+"?text=" +
+encodedMessage;
+
+
+/*
+Open WhatsApp
+*/
+
+window.open(
+whatsappURL,
+"_blank"
+);
+
+});
+
+</script>
+
+</body>
+</html>
